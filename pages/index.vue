@@ -1,15 +1,23 @@
 <template>
-  <div>
-    <tutorial/>
+  <!-- the container -->
+  <div class="container mx-auto app">
+    <!-- nav bar -->
+    <navbar/>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import NuxtLogo from '../components/NuxtLogo.vue'
-import Tutorial from '../components/Tutorial.vue'
+import Navbar from '../components/navbar.vue';
 
-export default Vue.extend({
-  components: { NuxtLogo, Tutorial },
+export default {
+  components: { Navbar },
   name: 'IndexPage'
-})
+}
+</script>
+
+<style>
+body {
+  direction: rtl;
+  font-family: 'cairo';
+}
+</style>

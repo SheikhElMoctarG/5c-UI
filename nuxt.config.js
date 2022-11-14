@@ -3,7 +3,7 @@ export default {
   head: {
     title: '5c-ui',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ar'
     },
     meta: [
       { charset: 'utf-8' },

@@ -14,7 +14,7 @@
     </div>
     <!-- share button -->
     <div class="mx-2">
-        <p>المشاركة</p>
+        <img src="~/assets/images/arrow-up.svg" alt="share button" class="w-6 h-6">
     </div>
   </div>
 </template>

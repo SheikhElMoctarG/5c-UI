@@ -1,6 +1,6 @@
 <template>
   <!-- the container -->
-  <div class="container mx-auto app">
+  <div class="container mx-auto max-w-sm">
     <!-- nav bar -->
     <navbar/>
   </div>

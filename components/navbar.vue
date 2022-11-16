@@ -4,7 +4,7 @@
     <!-- right -->
     <div class="flex items-center">
       <!-- icon -->
-      <div class="mx-2">
+      <div class="mx-2" v-on:click="share">
           <img src="~/assets/images/icon.png" alt="icon" class="w-16 h-16">
       </div>
       <!-- title -->
@@ -21,7 +21,16 @@
 
 <script>
 export default {
-    name: "navbar"
+    name: "navbar",
+    methods: {
+      share(){
+        navigator.share({
+          title: process.env.TITLE,
+          text: process.env.TEXT,
+          url: process.env.URL
+        })
+      }
+    }
 }
 </script>
 

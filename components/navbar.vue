@@ -13,7 +13,7 @@
       </div>
     </div>
     <!-- share button -->
-    <div class="mx-2">
+    <div class="mx-2" v-on="share()">
         <img src="~/assets/images/arrow-up.svg" alt="share button" class="w-5 h-5">
     </div>
   </div>
@@ -28,7 +28,7 @@ export default {
           title: process.env.TITLE,
           text: process.env.TEXT,
           url: process.env.URL
-        })
+        });
       }
     }
 }

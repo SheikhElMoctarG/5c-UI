@@ -14,9 +14,7 @@ import HomeContent from '../components/home-content.vue';
 
 export default {
   components: { Navbar, HomeContent },
-  name:'IndexPage',
-  methods: {
-  }
+  name:'IndexPage'
 }
 </script>
 

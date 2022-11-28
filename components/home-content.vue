@@ -36,6 +36,7 @@ export default {
         }).then((res)=> this.studentData = res.data)
           .catch((e)=> console.log(e));
         this.errorNotFound = await this.checkError();
+        await console.log(this.studentData);
       },
       checkError(){
         try {

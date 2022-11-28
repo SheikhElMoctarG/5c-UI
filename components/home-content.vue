@@ -19,7 +19,9 @@
 
 <script>
 import axios from "axios";
+import cardStudent from './cardStudent.vue';
 export default {
+  components: { cardStudent },
     name: "home-content",
     data() {
       return {
@@ -30,7 +32,7 @@ export default {
     },
     methods: {
       async search(){
-        await axios.post("https://api.sheikhelmoctar.tk/", {
+        await axios.post(process.env.API_URL, {
           id: parseInt(this.number),
           authentication: process.env.AUTHENTICATION
         }).then((res)=> this.studentData = res.data)

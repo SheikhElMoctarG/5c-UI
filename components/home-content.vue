@@ -8,7 +8,7 @@
         <input type="number" id="numberOfTheStudent" placeholder="ادخل الرقم.." class="my-5 border border-green-500 py-1 px-2 rounded-full text-sm max-w-md hover:border-green-500" v-model="number">
     </div>
     <div>
-        <button v-on:click="search()" class="sm:inline-flex justify-center items-center bg-green-500 hover:bg-green-600 active:bg-green-700 focus-visible:ring ring-green-300 text-white text-center rounded-md outline-none transition duration-100 px-5 py-2 text-base">البحث</button>
+        <button v-on:click="search()" class="sm:inline-flex justify-center items-center bg-green-500 hover:bg-green-600 active:bg-green-300 focus-visible:ring ring-green-300 text-white text-center rounded-md outline-none transition duration-100 px-5 py-2 text-base">البحث</button>
     </div>
     <div v-if="errorNotFound" class="bg-orange-500 rounded-md text-white mt-2">
       حدث خطأ غير متوقع
@@ -36,7 +36,7 @@ export default {
         }).then((res)=> this.studentData = res.data)
           .catch((e)=> console.log(e));
         this.errorNotFound = await this.checkError();
-        await console.log(this.studentData);
+        await this.check();
       },
       checkError(){
         try {
@@ -48,6 +48,13 @@ export default {
         } catch (error) {
           return true;
         }
+      },
+      toTheStudentPage(){
+        this.$router.push("/students/"+this.studentData.id_number);
+      },
+      check(){
+        if(!this.errorNotFound)
+          this.toTheStudentPage();
       }
     }
 }

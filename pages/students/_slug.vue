@@ -9,6 +9,16 @@
 import axios from "axios";
 import cardStudent from '../../components/cardStudent.vue';
 export default {
+    head: {
+        title: student.name + " - نتيجة",
+        meta: [
+        {
+            hid: 'description',
+            name: 'description',
+            content: process.env.TEXT
+        }
+        ],
+  },  
   components: { cardStudent },
     data() {
         return {

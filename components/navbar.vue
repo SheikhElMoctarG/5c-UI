@@ -9,7 +9,7 @@
       </div>
       <!-- title -->
       <div>
-          <h2>الرياضيات</h2>
+          <a :href="url">الرياضيات</a>
       </div>
     </div>
     <!-- share button -->
@@ -29,6 +29,11 @@ export default {
         //   text: process.env.TEXT,
         //   url: process.env.URL
         // });
+      }
+    },
+    data(){
+      return{
+        url: process.env.URL
       }
     }
 }

@@ -10,7 +10,7 @@ import axios from "axios";
 import cardStudent from '../../components/cardStudent.vue';
 export default {
     head: {
-        title: student.name + " - نتيجة",
+        title: "نتيجة الطالب",
         meta: [
         {
             hid: 'description',

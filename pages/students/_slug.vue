@@ -1,6 +1,7 @@
 <template>
-<div v-if="student != null">
-    <card-student average="average" className="student.class" name="student.name"/>
+<div>
+    <card-student  v-if="student != null" :average="student.average" :className="student.class" :name="student.name"/>
+    <div class="flex justify-center items-center" v-if="loading">جاري التحميل ...</div>
 </div>
 </template>
 
@@ -12,7 +13,8 @@ export default {
     data() {
         return {
             student: null,
-            number: this.$route.params.slug
+            number: this.$route.params.slug,
+            loading: true
         }
     },
     methods: {
@@ -20,7 +22,10 @@ export default {
             await axios.post(process.env.API_URL, {
             id: parseInt(this.number),
             authentication: process.env.AUTHENTICATION
-            }).then((res)=> this.student = res.data)
+            }).then((res)=> {
+                this.student = res.data;
+                this.loading = false;
+            })
             .catch((e)=> console.log(e));
         }
     },

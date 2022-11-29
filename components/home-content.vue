@@ -10,6 +10,8 @@
     <div>
         <button v-on:click="search()" class="sm:inline-flex justify-center items-center bg-green-500 hover:bg-green-600 active:bg-green-300 focus-visible:ring ring-green-300 text-white text-center rounded-md outline-none transition duration-100 px-5 py-2 text-base">البحث</button>
     </div>
+    <!-- loading text -->
+    <div class="flex justify-center items-center" v-if="loading">جاري التحميل ...</div>
     <div v-if="errorNotFound" class="bg-orange-500 rounded-md text-white mt-2">
       حدث خطأ غير متوقع
     </div>
@@ -27,11 +29,13 @@ export default {
       return {
         number: null,
         studentData: null,
-        errorNotFound: false
+        errorNotFound: false,
+        loading: false
       }
     },
     methods: {
       async search(){
+        this.loading = true;
         await axios.post(process.env.API_URL, {
           id: parseInt(this.number),
           authentication: process.env.AUTHENTICATION
@@ -43,11 +47,14 @@ export default {
       checkError(){
         try {
           if(this.studentData.error){
+            this.loading = false;
             return true;
           } else {
+            this.loading = false;
             return false;
           }
         } catch (error) {
+          this.loading = false;
           return true;
         }
       },

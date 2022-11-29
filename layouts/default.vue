@@ -14,8 +14,10 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
 body {
   direction: rtl;
-  font-family: 'cairo';
+  font-family: 'Cairo', sans-serif;
 }
 </style>

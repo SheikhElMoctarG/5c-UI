@@ -10,9 +10,9 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
       extend: {
-        // fontFamily:{
-        //   "tajawal": ["Tajawal"]
-        // },
+        fontFamily:{
+          "cairo": ["Cairo"]
+        },
         
           // "gradintColor": ["background-image: linear-gradient(#F9C729,#FB9633);"]
         

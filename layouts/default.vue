@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto max-w-sm">
+  <div class="container mx-auto max-w-sm font-cairo">
     <navbar/>
     <Nuxt/>
   </div>
@@ -18,6 +18,5 @@ export default {
 
 body {
   direction: rtl;
-  font-family: 'Cairo', sans-serif;
 }
 </style>

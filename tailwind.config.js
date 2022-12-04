@@ -10,12 +10,6 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
       extend: {
-        fontFamily:{
-          "cairo": ["Cairo"]
-        },
-        
-          // "gradintColor": ["background-image: linear-gradient(#F9C729,#FB9633);"]
-        
       },
     },
     variants: {

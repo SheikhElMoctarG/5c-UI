@@ -68,15 +68,32 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/sitemap'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   },
 
+  sitemap: {
+    hostname: process.env.URL,
+    gzip: true,
+    exclude: [
+      '/secret',
+      '/admin/**'
+    ],
+    routes: [
+      {
+        url: '/',
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: '2022-12-02T13:30:00.000Z'
+      }
+    ]
+  },
   googleAnalytics: {
-    id: 'UA-XXX-X'
+    id: 'UA-250977209-1'
   }
 
 }

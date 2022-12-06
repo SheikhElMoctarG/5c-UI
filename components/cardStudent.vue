@@ -20,6 +20,21 @@
             <span v-if="average < 10.00" class="font-semibold">راسب</span>
           </div>
         </div>
+        <!-- the matterials -->
+        <div class="flex justify-center items-center text-slate-900 mx-3 my-2 rounded-md" id="matterialsDiv">
+          <table>
+            <tr>
+              <th>المادة</th>
+              <th>المعدل</th>
+            </tr>
+            <!-- content -->
+            <tr>
+              <td>الرياضيات</td>
+              <td>15.00</td>
+            </tr>
+          </table>
+        </div>
+        <div></div>
     </div>
   </div>
 </template>
@@ -34,5 +49,8 @@ export default {
 <style>
 #line-of-card {
   height: 2px;
+}
+#matterialsDiv {
+  background-color: #eeeeeead;
 }
 </style>

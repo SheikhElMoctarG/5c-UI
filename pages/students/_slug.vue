@@ -37,6 +37,18 @@ export default {
                 this.loading = false;
             })
             .catch((e)=> console.log(e));
+            // this.wait(5).then(()=> {
+            //     // if(this.student == null){
+            //     //     this.loading = false;
+            //     // }
+            //     console.log("done sheikh el moctar");
+            // });
+            // this.loading = false;
+        },
+        wait(s){
+            return new Promise((resolve) => {
+                setTimeout(resolve, s * 1000);
+            });
         }
     },
     name: "studentPage",

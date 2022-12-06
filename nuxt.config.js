@@ -69,7 +69,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/dotenv',
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -94,6 +95,10 @@ export default {
   },
   googleAnalytics: {
     id: 'UA-250977209-1'
+  },
+  robots: {
+    UserAgent: '*',
+    Allow: '/'
   }
 
 }

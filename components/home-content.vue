@@ -12,8 +12,11 @@
     </div>
     <!-- loading text -->
     <div class="flex justify-center items-center" v-if="loading">جاري التحميل ...</div>
-    <div v-if="errorNotFound" class="bg-orange-500 rounded-md text-white mt-2">
-      حدث خطأ غير متوقع
+    <div v-if="errorFromServer" class="bg-orange-500 rounded-md text-white mt-2">
+      لقد حدث خطأ، من الممكن ان تكون المشكلة من السيرفر الرئيسي.
+    </div>
+    <div v-if="errorNotFound" class="bg-red-500 rounded-md text-white mt-2">
+      لم يتم العثور على هذا الرقم في قاعدة البيانات، تأكد من الرقم.
     </div>
     </div>
   </div>
@@ -30,6 +33,7 @@ export default {
         number: null,
         studentData: null,
         errorNotFound: false,
+        errorFromServer: false,
         loading: false
       }
     },
@@ -37,22 +41,29 @@ export default {
       async search(){
         this.loading = true;
         this.errorNotFound = false;
+        this.errorFromServer = false;
         await axios.post(process.env.API_URL, {
           id: parseInt(this.number),
           authentication: process.env.AUTHENTICATION
-        }).then((res)=> this.studentData = res.data)
+        }).then((res)=> {
+          if(res.data.error && res.data.error != undefined){
+            this.errorNotFound = true;
+            this.loading = false;
+          } else {
+            this.studentData = res.data
+          }
+        })
           .catch((e)=> {
             this.loading = false;
             this.errorNotFound = true;
           });
-        this.wait(30).then(()=> {
+        this.wait(18).then(()=> {
           if(this.studentData == null){
             this.loading = false;
-            this.errorNotFound = true;
+            this.errorFromServer = true;
           }
-          console.log("done sheikh el moctar");
         });
-        this.errorNotFound = await this.checkError();
+        // this.errorNotFound = await this.checkError();
         await this.check();
       },
       checkError(){
@@ -70,7 +81,7 @@ export default {
         }
       },
       toTheStudentPage(){
-        this.$router.push("/students/"+this.studentData.id_number);
+        this.$router.push("/"+this.studentData.id_number);
       },
       check(){
         if(!this.errorNotFound)

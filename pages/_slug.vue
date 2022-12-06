@@ -2,12 +2,14 @@
 <div>
     <card-student  v-if="student != null" :average="student.average" :className="student.class" :name="student.name"/>
     <div class="flex justify-center items-center" v-if="loading">جاري التحميل ...</div>
+    <div class="flex justify-center items-center text-orange-600" v-if="notFound">لم يتم العثور على هذا الرقم في قاعدة البيانات. </div>
+
 </div>
 </template>
 
 <script>
 import axios from "axios";
-import cardStudent from '../../components/cardStudent.vue';
+import cardStudent from '../components/cardStudent.vue';
 export default {
     head: {
         title: "نتيجة الطالب",
@@ -24,7 +26,8 @@ export default {
         return {
             student: null,
             number: this.$route.params.slug,
-            loading: true
+            loading: true,
+            notFound: false
         }
     },
     methods: {
@@ -33,19 +36,25 @@ export default {
             id: parseInt(this.number),
             authentication: process.env.AUTHENTICATION
             }).then((res)=> {
-                this.student = res.data;
-                this.loading = false;
+                if(res.data.error){
+                    this.notFound = true;
+                    this.loading = false;
+                } else {
+                    this.student = res.data;
+                    this.loading = false;
+                }
+                
             })
             .catch((e)=> console.log(e));
-            // this.wait(5).then(()=> {
-            //     // if(this.student == null){
-            //     //     this.loading = false;
-            //     // }
-            //     console.log("done sheikh el moctar");
-            // });
-            // this.loading = false;
+            await this.wait(0).then(()=> {
+                if(this.student.error && this.student.error != undefined){
+                    this.loading = false;
+                    this.student = null;
+                }
+                console.log("done sheikh el moctar");
+            });
         },
-        wait(s){
+        async wait(s){
             return new Promise((resolve) => {
                 setTimeout(resolve, s * 1000);
             });

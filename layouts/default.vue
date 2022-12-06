@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto max-w-sm">
+  <div class="container mx-auto max-w-sm font-cairo">
     <navbar/>
     <Nuxt/>
   </div>
@@ -14,10 +14,11 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
-
 body {
   direction: rtl;
-  font-family: 'Cairo', sans-serif;
+}
+@font-face{
+  font-family: 'Cairo';
+  src: url('../fonts/Cairo.ttf') format('truetype');
 }
 </style>

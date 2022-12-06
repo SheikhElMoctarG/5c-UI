@@ -36,11 +36,22 @@ export default {
     methods: {
       async search(){
         this.loading = true;
+        this.errorNotFound = false;
         await axios.post(process.env.API_URL, {
           id: parseInt(this.number),
           authentication: process.env.AUTHENTICATION
         }).then((res)=> this.studentData = res.data)
-          .catch((e)=> console.log(e));
+          .catch((e)=> {
+            this.loading = false;
+            this.errorNotFound = true;
+          });
+        this.wait(30).then(()=> {
+          if(this.studentData == null){
+            this.loading = false;
+            this.errorNotFound = true;
+          }
+          console.log("done sheikh el moctar");
+        });
         this.errorNotFound = await this.checkError();
         await this.check();
       },
@@ -64,6 +75,12 @@ export default {
       check(){
         if(!this.errorNotFound)
           this.toTheStudentPage();
+      },
+      // function to waiting the response with seconds
+      async wait(s){
+        return new Promise((resolve) => {
+              setTimeout(resolve, s * 1000);
+          });
       }
     }
 }

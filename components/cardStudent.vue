@@ -2,8 +2,8 @@
   <div class="container mx-auto px-3">
     <!-- container -->
     <div class="bg-green-500 rounded-sm mx-5 text-white text-center">
-        <h1 class="text-xl font-semibold mt-2"> {{name}} </h1>
-        <p class="text-sm">  {{className}}  </p>
+        <h1 class="text-xl font-bold mt-2"> {{name}} </h1>
+        <p class="text-sm">  ##{{className}}##  </p>
         <!-- line -->
         <div class="flex justify-center items-center"> <span class="w-36 bg-white rounded-lg my-1" id="line-of-card"></span> </div>
         <!-- the content of decieded and the average -->

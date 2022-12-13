@@ -24,11 +24,14 @@ export default {
     name: "navbar",
     methods: {
       share(){
-        // navigator.share({
-        //   title: process.env.TITLE,
-        //   text: process.env.TEXT,
-        //   url: process.env.URL
-        // });
+        if(navigator.share){
+          navigator.share({
+            title: process.env.TITLE,
+            text: process.env.TEXT,
+            url: process.env.URL
+          }).then(() => console.log('Successful share'))
+          .catch((error) => console.log('Error sharing', error));
+        } 
       }
     },
     data(){

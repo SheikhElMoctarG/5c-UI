@@ -81,7 +81,7 @@ export default {
         }
       },
       toTheStudentPage(){
-        this.$router.push("/"+this.studentData.id_number);
+        this.$router.push("/number/"+this.studentData.id_number);
       },
       check(){
         if(!this.errorNotFound)

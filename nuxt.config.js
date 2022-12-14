@@ -65,7 +65,8 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/pwa'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -101,6 +102,22 @@ export default {
   robots: {
     UserAgent: '*',
     Allow: '/'
+  }, 
+  // pwa for the mobiles
+  pwa: {
+    manifest: {
+      name: process.env.TITLE
+    },
+    icon: {
+      fileName: "icon_app.png"
+    },
+    meta: {
+      name: "نتائج فصل الرياضيات",
+      description: process.env.TEXT,
+      theme_color: '#79DC7D',
+      lang: 'ar',
+      nativeUI: true,
+      mobileAppIOS: true
+    }
   }
-
 }

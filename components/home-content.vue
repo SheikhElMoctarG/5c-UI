@@ -57,8 +57,8 @@ export default {
             this.loading = false;
             this.errorNotFound = true;
           });
-        this.wait(18).then(()=> {
-          if(this.studentData == null){
+        this.wait(12).then(()=> {
+          if(this.studentData == null && !this.errorNotFound){
             this.loading = false;
             this.errorFromServer = true;
           }

@@ -11,6 +11,12 @@
     import axios from "axios";
     import cardStudent from '../../components/cardStudent.vue';
     export default {
+        data(){
+            return{
+                student: null,
+                notFound: false
+            }
+        },
         head: {
             title: "نتيجة الطالب",
             meta: [

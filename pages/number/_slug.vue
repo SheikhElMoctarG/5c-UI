@@ -22,47 +22,28 @@
             ],
       },  
       components: { cardStudent },
-        data() {
-            return {
-                student: null,
-                number: this.$route.params.slug,
-                loading: true,
-                notFound: false
-            }
-        },
-        methods: {
-            async getStudent(){
-                await axios.post(process.env.API_URL, {
-                id: parseInt(this.number),
+        name: "studentPage",
+        
+        asyncData({route}){
+            return  axios.post(process.env.API_URL, {
+                id: parseInt(route.params.slug),
                 authentication: process.env.AUTHENTICATION
                 }).then((res)=> {
                     if(res.data.error){
-                        this.notFound = true;
-                        this.loading = false;
+                        return {
+                           notFound: true,
+                           loading: false
+                        }
+                        
                     } else {
-                        this.student = res.data;
-                        this.loading = false;
+                        return {
+                            student: res.data,
+                            loading: false
+                        }
+                        
                     }
                     
                 })
-                .catch((e)=> console.log(e));
-                await this.wait(0).then(()=> {
-                    if(this.student.error && this.student.error != undefined){
-                        this.loading = false;
-                        this.student = null;
-                    }
-                    console.log("done sheikh el moctar");
-                });
-            },
-            async wait(s){
-                return new Promise((resolve) => {
-                    setTimeout(resolve, s * 1000);
-                });
-            }
-        },
-        name: "studentPage",
-        created(){
-            this.getStudent();
         }
     };
     </script>

@@ -109,7 +109,7 @@ export default {
       name: process.env.TITLE
     },
     icon: {
-      fileName: "icon_app.png"
+      fileName: "icon.png"
     },
     meta: {
       name: "نتائج فصل الرياضيات",

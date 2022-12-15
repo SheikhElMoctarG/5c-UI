@@ -1,5 +1,5 @@
 <template>
-  <div class="text-center flex justify-center items-center mb-3">
+  <div class="text-center flex justify-center items-center">
     <div>
       <!-- the big text -->
     <h1 class="text-gray-800 mt-16">البحث من خلال رقم الجلوس:</h1>

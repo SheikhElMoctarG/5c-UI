@@ -1,9 +1,7 @@
 <template>
   <!-- the container -->
-  <div>
     <!-- content -->
     <home-content/>
-  </div>
 </template>
 
 <script>

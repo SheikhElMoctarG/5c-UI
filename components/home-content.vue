@@ -12,10 +12,10 @@
     </div>
     <!-- loading text -->
     <div class="flex justify-center items-center" v-if="loading">جاري التحميل ...</div>
-    <div v-if="errorFromServer" class="bg-orange-500 rounded-md text-white mt-2">
+    <div v-if="errorFromServer" class="bg-orange-500 rounded-md text-white mt-2 p-1 w-64">
       لقد حدث خطأ، من الممكن ان تكون المشكلة من السيرفر الرئيسي.
     </div>
-    <div v-if="errorNotFound" class="bg-red-500 rounded-md text-white mt-2">
+    <div v-if="errorNotFound" class="bg-red-500 rounded-md text-white mt-2 p-1 w-64">
       لم يتم العثور على هذا الرقم في قاعدة البيانات، تأكد من الرقم.
     </div>
     </div>

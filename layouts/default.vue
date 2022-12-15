@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto max-w-sm">
+  <div class="container mx-auto max-w-md">
     <navbar/>
     <Nuxt/>
   </div>

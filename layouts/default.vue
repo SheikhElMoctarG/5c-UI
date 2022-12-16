@@ -2,7 +2,7 @@
   <div class="container mx-auto max-w-md">
     <navbar/>
     <Nuxt/>
-    <Footer/>
+    <Footer v-if="currentURL != aboutUrl"/>
   </div>
 </template>
 
@@ -11,7 +11,12 @@ import Navbar from '../components/navbar.vue'
 import Myfooter from "../components/footer.vue"
 export default {
   components: { Navbar , Myfooter},
-
+  data(){
+    return{
+      currentURL: window.location.href,
+      aboutUrl: process.env.URL + "/about"
+    }
+  }
 }
 </script>
 

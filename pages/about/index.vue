@@ -35,12 +35,12 @@ export default {
   head: {
     title: "حول الموقع",
     meta: [
-    { property: "og:site_name", content: process.env.TITLE },
+    { property: "og:site_name", content: "process.env.TITLE" },
     { hid: "og:type", property: "og:type", content: "website" },
     {
       hid: "og:url",
       property: "og:url",
-      content: process.env.URL + "/about",
+      content: "https://5c.sheikhelmoctar.tk/about",
     },
     {
       hid: "og:title",
@@ -55,10 +55,10 @@ export default {
     {
       hid: "og:image",
       property: "og:image",
-      content: "https://h.top4top.io/p_2542crhw51.png",
+      content: "https://h.top4top.io/p_25421s5fy2.png",
     },
-    { property: "og:image:width", content: "740" },
-    { property: "og:image:height", content: "300" },
+    { property: "og:image:width", content: "600" },
+    { property: "og:image:height", content: "315" },
     ]
   },
 };

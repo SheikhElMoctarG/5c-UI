@@ -32,7 +32,7 @@ export default {
       {
         hid: 'og:image:secure_url',
         property: 'og:image:secure_url',
-        content: 'https://k.top4top.io/p_25249p2r71.png'
+        content: 'https://i.top4top.io/p_2542d3cxo2.png'
       },
       {
         hid: 'og:image:alt',
@@ -42,7 +42,7 @@ export default {
       {
         hid: 'twitter:image',
         name: 'twitter:image',
-        content: 'https://k.top4top.io/p_25249p2r71.png'
+        content: 'https://i.top4top.io/p_2542d3cxo2.png'
       }
     ],
     link: [

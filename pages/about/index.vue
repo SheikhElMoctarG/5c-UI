@@ -48,8 +48,23 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: 'https://h.top4top.io/p_2542crhw51.png'
+        content: 'https://i.top4top.io/p_2542d3cxo2.png'
       },
+      {
+        hid: 'og:image:secure_url',
+        property: 'og:image:secure_url',
+        content: 'https://i.top4top.io/p_2542d3cxo2.png'
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: process.env.TITLE
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://i.top4top.io/p_2542d3cxo2.png'
+      }
     ],
   },
 };

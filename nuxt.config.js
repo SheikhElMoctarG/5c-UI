@@ -7,16 +7,13 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: process.env.TITLE,
     htmlAttrs: {
       lang: 'ar'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.TEXT},
       { name: 'format-detection', content: 'telephone=yes' },
-      {hid: 'og:title', name: 'og:title', content: process.env.TITLE},
       { name: 'google-site-verification', content: "ZeiClcfAeb4Ssc-QGjzpPhylmKe2U6-Baks6Fj6AU2A"},
       {hid: 'keywords', name: 'keywords', content: "5c1, الرياضيات, فصل الرياضيات, موريتانيا"},
       {
@@ -25,24 +22,9 @@ export default {
         content: 'summary_large_image'
       },
       {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'https://g.top4top.io/p_2542ybai71.png'
-      },
-      {
-        hid: 'og:image:secure_url',
-        property: 'og:image:secure_url',
-        content: 'https://g.top4top.io/p_2542ybai71.png'
-      },
-      {
         hid: 'og:image:alt',
         property: 'og:image:alt',
         content: process.env.TITLE
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://g.top4top.io/p_2542ybai71.png'
       }
     ],
     link: [

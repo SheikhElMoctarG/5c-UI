@@ -35,37 +35,31 @@ export default {
   head: {
     title: "حول الموقع",
     meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: "هذا الموقع خاص، ولا يتبع لأي جهة حكومية موريتانية...",
-      },
-      {
-        hid: 'twitter:card',
-        name: 'twitter:card',
-        content: 'summary_large_image'
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'https://i.top4top.io/p_2542d3cxo2.png'
-      },
-      {
-        hid: 'og:image:secure_url',
-        property: 'og:image:secure_url',
-        content: 'https://i.top4top.io/p_2542d3cxo2.png'
-      },
-      {
-        hid: 'og:image:alt',
-        property: 'og:image:alt',
-        content: process.env.TITLE
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://i.top4top.io/p_2542d3cxo2.png'
-      }
-    ],
+    { property: "og:site_name", content: process.env.TITLE },
+    { hid: "og:type", property: "og:type", content: "website" },
+    {
+      hid: "og:url",
+      property: "og:url",
+      content: process.env.URL + "/about",
+    },
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: "حول الموقع",
+    },
+    {
+      hid: "og:description",
+      property: "og:description",
+      content: "هذا الموقع خاص، ولا يتبع لأي جهة حكومية موريتانية...",
+    },
+    {
+      hid: "og:image",
+      property: "og:image",
+      content: "https://h.top4top.io/p_2542crhw51.png",
+    },
+    { property: "og:image:width", content: "740" },
+    { property: "og:image:height", content: "300" },
+    ]
   },
 };
 </script>

@@ -42,6 +42,32 @@ export default {
         content: 'https://j.top4top.io/p_2542v35yh3.png'
       }
     ],
+    meta: [
+    { property: "og:site_name", content: process.env.TITLE },
+    { hid: "og:type", property: "og:type", content: "website" },
+    {
+      hid: "og:url",
+      property: "og:url",
+      content: process.env.URL + "/number/",
+    },
+    {
+      hid: "og:title",
+      property: "og:title",
+      content: "نتيجة الطالب",
+    },
+    {
+      hid: "og:description",
+      property: "og:description",
+      content: process.env.TEXT,
+    },
+    {
+      hid: "og:image",
+      property: "og:image",
+      content: "https://j.top4top.io/p_2542v35yh3.png",
+    },
+    { property: "og:image:width", content: "740" },
+    { property: "og:image:height", content: "300" },
+    ]
   },
   components: { cardStudent, Footer1 },
 

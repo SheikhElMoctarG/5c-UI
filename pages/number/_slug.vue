@@ -27,47 +27,57 @@
 import axios from "axios";
 import cardStudent from "../../components/cardStudent.vue";
 import Footer1 from "../../components/footer.vue";
+
+  const title = "معلومات الطالب";
+  const description = "هذه الصفحة تمكنك من الإطلاع على نتائج الطالب إذا كان موجود في قاعدة البيانات";
+  const urlImage = "https://e.top4top.io/p_2543szwz12.png";
+  const currentURL = "https://5c.sheikhelmoctar.tk/number/";
+
 export default {
   head: {
-    title: "نتيجة الطالب",
+    title: title,
     meta: [
-      {
-        hid: "description",
-        name: "description",
-        content: process.env.TEXT,
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'https://j.top4top.io/p_2542v35yh3.png'
-      }
-    ],
-    meta: [
-    { property: "og:site_name", content: process.env.TITLE },
-    { hid: "og:type", property: "og:type", content: "website" },
-    {
-      hid: "og:url",
-      property: "og:url",
-      content: process.env.URL + "/number/",
-    },
-    {
-      hid: "og:title",
-      property: "og:title",
-      content: "نتيجة الطالب",
-    },
-    {
-      hid: "og:description",
-      property: "og:description",
-      content: process.env.TEXT,
-    },
-    {
-      hid: "og:image",
-      property: "og:image",
-      content: "https://j.top4top.io/p_2542v35yh3.png",
-    },
-    { property: "og:image:width", content: "740" },
-    { property: "og:image:height", content: "300" },
-    ]
+        {
+          hid: 'description',
+          name: 'description',
+          content: description
+        },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: title },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: description
+        },
+        { hid: 'og:type', property: 'og:type', content: 'page' },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: currentURL
+        },
+        { hid: 'og:image', property: 'og:image', content: urlImage },
+        // Twitter Card
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: description
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: urlImage
+        },
+        {
+          hid: 'twitter:image:',
+          name: 'twitter:image:alt',
+          content: title
+        }
+      ]
   },
   components: { cardStudent, Footer1 },
 

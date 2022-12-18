@@ -25,6 +25,26 @@ export default {
         hid: 'og:image:alt',
         property: 'og:image:alt',
         content: process.env.TITLE
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: 'https://g.top4top.io/p_2542ybai71.png'
+      },
+      {
+        hid: 'og:image:secure_url',
+        property: 'og:image:secure_url',
+        content: 'https://g.top4top.io/p_2542ybai71.png'
+      },
+      {
+        hid: 'og:image:alt',
+        property: 'og:image:alt',
+        content: 'نتائج فصل الرياضيات'
+      },
+      {
+        hid: 'twitter:image',
+        name: 'twitter:image',
+        content: 'https://g.top4top.io/p_2542ybai71.png'
       }
     ],
     link: [

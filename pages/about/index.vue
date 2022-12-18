@@ -32,35 +32,117 @@
 <script>
 export default {
   name: "aboutPage",
-  head: {
-    title: "حول الموقع",
-    meta: [
-    { property: "og:site_name", content: "process.env.TITLE" },
-    { hid: "og:type", property: "og:type", content: "website" },
-    {
-      hid: "og:url",
-      property: "og:url",
-      content: "https://5c.sheikhelmoctar.tk/about",
-    },
-    {
-      hid: "og:title",
-      property: "og:title",
-      content: "حول الموقع",
-    },
-    {
-      hid: "og:description",
-      property: "og:description",
-      content: "هذا الموقع خاص، ولا يتبع لأي جهة حكومية موريتانية...",
-    },
-    {
-      hid: "og:image",
-      property: "og:image",
-      content: "https://h.top4top.io/p_25421s5fy2.png",
-    },
-    { property: "og:image:width", content: "600" },
-    { property: "og:image:height", content: "315" },
-    ]
+  data(){
+    return{
+      title: "حول الموقع",
+      description: "هذا الموقع خاص، ولا يتبع لأي جهة حكومية موريتانية...",
+      urlImage: "https://c.top4top.io/p_254354bst1.png",
+      currentURL: "https://5c.sheikhelmoctar.tk/about"
+    }
   },
+  // head: {
+  //   title: "حول الموقع",
+  //   meta: [
+  //   { property: "og:site_name", content: "process.env.TITLE" },
+  //   { hid: "og:type", property: "og:type", content: "website" },
+  //   {
+  //     hid: "og:url",
+  //     property: "og:url",
+  //     content: "https://5c.sheikhelmoctar.tk/about",
+  //   },
+  //   {
+  //     hid: "og:title",
+  //     property: "og:title",
+  //     content: "حول الموقع",
+  //   },
+  //   {
+  //     hid: "og:description",
+  //     property: "og:description",
+  //     content: "هذا الموقع خاص، ولا يتبع لأي جهة حكومية موريتانية...",
+  //   },
+  //   {
+  //     hid: "og:image",
+  //     property: "og:image",
+  //     content: "https://h.top4top.io/p_25421s5fy2.png",
+  //   },
+  //   { property: "og:image:width", content: "600" },
+  //   { property: "og:image:height", content: "315" },
+  //   ]
+  // },
+  head() {
+    return {
+      meta: [
+        // {
+        //   hid: 'description',
+        //   name: 'description',
+        //   content: process.env.TEXT
+        // },
+        // // Open Graph
+        // {
+        //   hid: 'og:title',
+        //   property: 'og:title',
+        //   content: process.env.TITLE
+        // },
+        // {
+        //   hid: 'og:description',
+        //   property: 'og:description',
+        //   content: process.env.TEXT
+        // },
+        // // Twitter Card
+        // {
+        //   hid: 'twitter:title',
+        //   name: 'twitter:title',
+        //   content: process.env.TITLE
+        // },
+        // {
+        //   hid: 'twitter:description',
+        //   name: 'twitter:description',
+        //   content: process.env.TEXT
+        // },
+
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: this.title },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.description
+        },
+        { hid: 'og:type', property: 'og:type', content: 'page' },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: this.currentURL
+        },
+        { hid: 'og:image', property: 'og:image', content: this.urlImage },
+        // Twitter Card
+        {
+          hid: 'twitter:title',
+          name: 'twitter:title',
+          content: this.title
+        },
+        {
+          hid: 'twitter:description',
+          name: 'twitter:description',
+          content: this.description
+        },
+        {
+          hid: 'twitter:image',
+          name: 'twitter:image',
+          content: this.urlImage
+        },
+        {
+          hid: 'twitter:image:',
+          name: 'twitter:image:alt',
+          content: this.title
+        }
+      ]
+    }
+  }
 };
 </script>
 

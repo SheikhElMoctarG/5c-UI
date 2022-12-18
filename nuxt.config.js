@@ -1,5 +1,5 @@
 export default {
-  ssr: false,
+  ssr: true,
   target: 'static',
   router: {
     base: '/',
@@ -10,43 +10,43 @@ export default {
     htmlAttrs: {
       lang: 'ar'
     },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'format-detection', content: 'telephone=yes' },
-      { name: 'google-site-verification', content: "ZeiClcfAeb4Ssc-QGjzpPhylmKe2U6-Baks6Fj6AU2A"},
-      {hid: 'keywords', name: 'keywords', content: "5c1, الرياضيات, فصل الرياضيات, موريتانيا"},
-      {
-        hid: 'twitter:card',
-        name: 'twitter:card',
-        content: 'summary_large_image'
-      },
-      {
-        hid: 'og:image:alt',
-        property: 'og:image:alt',
-        content: process.env.TITLE
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: 'https://g.top4top.io/p_2542ybai71.png'
-      },
-      {
-        hid: 'og:image:secure_url',
-        property: 'og:image:secure_url',
-        content: 'https://g.top4top.io/p_2542ybai71.png'
-      },
-      {
-        hid: 'og:image:alt',
-        property: 'og:image:alt',
-        content: 'نتائج فصل الرياضيات'
-      },
-      {
-        hid: 'twitter:image',
-        name: 'twitter:image',
-        content: 'https://g.top4top.io/p_2542ybai71.png'
-      }
-    ],
+    // meta: [
+    //   { charset: 'utf-8' },
+    //   { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    //   { name: 'format-detection', content: 'telephone=yes' },
+    //   { name: 'google-site-verification', content: "ZeiClcfAeb4Ssc-QGjzpPhylmKe2U6-Baks6Fj6AU2A"},
+    //   {hid: 'keywords', name: 'keywords', content: "5c1, الرياضيات, فصل الرياضيات, موريتانيا"},
+    //   {
+    //     hid: 'twitter:card',
+    //     name: 'twitter:card',
+    //     content: 'summary_large_image'
+    //   },
+    //   {
+    //     hid: 'og:image:alt',
+    //     property: 'og:image:alt',
+    //     content: process.env.TITLE
+    //   },
+    //   {
+    //     hid: 'og:image',
+    //     property: 'og:image',
+    //     content: 'https://g.top4top.io/p_2542ybai71.png'
+    //   },
+    //   {
+    //     hid: 'og:image:secure_url',
+    //     property: 'og:image:secure_url',
+    //     content: 'https://g.top4top.io/p_2542ybai71.png'
+    //   },
+    //   {
+    //     hid: 'og:image:alt',
+    //     property: 'og:image:alt',
+    //     content: 'نتائج فصل الرياضيات'
+    //   },
+    //   {
+    //     hid: 'twitter:image',
+    //     name: 'twitter:image',
+    //     content: 'https://g.top4top.io/p_2542ybai71.png'
+    //   }
+    // ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/icon.png' }
     ]

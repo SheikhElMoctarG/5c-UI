@@ -28,57 +28,13 @@ import axios from "axios";
 import cardStudent from "../../components/cardStudent.vue";
 import Footer1 from "../../components/footer.vue";
 
-  const title = "معلومات الطالب";
-  const description = "هذه الصفحة تمكنك من الإطلاع على نتائج الطالب إذا كان موجود في قاعدة البيانات";
-  const urlImage = "https://e.top4top.io/p_2543szwz12.png";
-  const currentURL = "https://5c.sheikhelmoctar.tk/number/";
+const title = "معلومات الطالب";
+const description =
+  "هذه الصفحة تمكنك من الإطلاع على نتائج الطالب إذا كان موجود في قاعدة البيانات";
+const urlImage = "https://e.top4top.io/p_2543szwz12.png";
+const currentURL = "https://5c.sheikhelmoctar.tk/number/";
 
 export default {
-  head: {
-    title: title,
-    meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: description
-        },
-        // Open Graph
-        { hid: 'og:title', property: 'og:title', content: title },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: description
-        },
-        { hid: 'og:type', property: 'og:type', content: 'page' },
-        {
-          hid: 'og:url',
-          property: 'og:url',
-          content: currentURL
-        },
-        { hid: 'og:image', property: 'og:image', content: urlImage },
-        // Twitter Card
-        {
-          hid: 'twitter:title',
-          name: 'twitter:title',
-          content: title
-        },
-        {
-          hid: 'twitter:description',
-          name: 'twitter:description',
-          content: description
-        },
-        {
-          hid: 'twitter:image',
-          name: 'twitter:image',
-          content: urlImage
-        },
-        {
-          hid: 'twitter:image:',
-          name: 'twitter:image:alt',
-          content: title
-        }
-      ]
-  },
   components: { cardStudent, Footer1 },
 
   data() {
@@ -87,6 +43,7 @@ export default {
       number: this.$route.params.slug,
       loading: true,
       notFound: false,
+      myname: "sheikh el-moctar"
     };
   },
   methods: {
@@ -121,10 +78,83 @@ export default {
     },
   },
   name: "studentPage",
-  created() {
-    this.getStudent();
+  // created() {
+  //   this.getStudent();
+  // },
+
+
+  // ----- meta tags start
+  head: {
+    title: title,
+    meta: [
+      {
+        hid: "description",
+        name: "description",
+        content: description,
+      },
+      // Open Graph
+      { hid: "og:title", property: "og:title", content: title },
+      {
+        hid: "og:description",
+        property: "og:description",
+        content: description,
+      },
+      { hid: "og:type", property: "og:type", content: "page" },
+      {
+        hid: "og:url",
+        property: "og:url",
+        content: currentURL,
+      },
+      { hid: "og:image", property: "og:image", content: urlImage },
+      // Twitter Card
+      {
+        hid: "twitter:title",
+        name: "twitter:title",
+        content: title,
+      },
+      {
+        hid: "twitter:description",
+        name: "twitter:description",
+        content: description,
+      },
+      {
+        hid: "twitter:image",
+        name: "twitter:image",
+        content: urlImage,
+      },
+      {
+        hid: "twitter:image:",
+        name: "twitter:image:alt",
+        content: title,
+      },
+    ],
+  },
+  // meta tags end
+
+  //  the asyncData function
+  async asyncData({ route }) {
+    return axios
+      .post(process.env.API_URL, {
+        id: parseInt(route.params.slug),
+        authentication: process.env.AUTHENTICATION,
+      })
+      .then((res) => {
+        if (res.data.error) {
+          return {
+            notFound: true,
+            loading: false,
+          };
+        } else {
+          return {
+            student: res.data,
+            loading: false,
+          };
+        }
+      })
+      .catch((e) => console.log(e));
   },
 };
+
 </script>
 
 <style></style>

@@ -9,7 +9,7 @@
       </div>
       <!-- title -->
       <div>
-          <a :href="url">المهندس</a>
+          <a :href="url">الرياضيات</a>
       </div>
     </div>
     <!-- share button -->

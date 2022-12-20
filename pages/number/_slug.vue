@@ -78,9 +78,9 @@ export default {
     },
   },
   name: "studentPage",
-  // created() {
-  //   this.getStudent();
-  // },
+  created() {
+    this.getStudent();
+  },
 
 
   // ----- meta tags start
@@ -129,30 +129,8 @@ export default {
       },
     ],
   },
-  // meta tags end
 
-  //  the asyncData function
-  async asyncData({ route }) {
-    return axios
-      .post(process.env.API_URL, {
-        id: parseInt(route.params.slug),
-        authentication: process.env.AUTHENTICATION,
-      })
-      .then((res) => {
-        if (res.data.error) {
-          return {
-            notFound: true,
-            loading: false,
-          };
-        } else {
-          return {
-            student: res.data,
-            loading: false,
-          };
-        }
-      })
-      .catch((e) => console.log(e));
-  },
+
 };
 
 </script>

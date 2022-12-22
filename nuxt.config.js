@@ -1,10 +1,10 @@
 export default {
   ssr: true,
-  target: 'static',
-  router: {
-    base: '/',
-    // middleware: "redirectToPage"
-  },
+  target: 'server',
+  // router: {
+  //   base: '/',
+  //   // middleware: "redirectToPage"
+  // },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     htmlAttrs: {
@@ -106,20 +106,20 @@ export default {
     Allow: '/'
   }, 
   // pwa for the mobiles
-  pwa: {
-    manifest: {
-      name: process.env.TITLE
-    },
-    icon: {
-      fileName: "icon.png"
-    },
-    meta: {
-      name: "نتائج فصل الرياضيات",
-      description: process.env.TEXT,
-      theme_color: '#79DC7D',
-      lang: 'ar',
-      nativeUI: true,
-      mobileAppIOS: true
-    }
-  }
+  // pwa: {
+  //   manifest: {
+  //     name: process.env.TITLE
+  //   },
+  //   icon: {
+  //     fileName: "icon.png"
+  //   },
+  //   meta: {
+  //     name: "نتائج فصل الرياضيات",
+  //     description: process.env.TEXT,
+  //     theme_color: '#79DC7D',
+  //     lang: 'ar',
+  //     nativeUI: true,
+  //     mobileAppIOS: true
+  //   }
+  // }
 }

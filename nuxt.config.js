@@ -1,9 +1,9 @@
 export default {
-  ssr: false,
+  ssr: true,
   target: 'static',
   router: {
     base: '/',
-    middleware: "redirectToPage"
+    // middleware: "redirectToPage"
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {

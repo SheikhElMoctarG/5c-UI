@@ -3,7 +3,7 @@ export default {
   target: 'static',
   router: {
     base: '/',
-    // middleware: "redirectToPage"
+    middleware: "redirectToPage"
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
